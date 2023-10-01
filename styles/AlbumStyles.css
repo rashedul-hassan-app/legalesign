@@ -1,0 +1,72 @@
+.album-card {
+    padding: 16px;
+    background-color: #fff;
+    margin: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+
+    /* Flexbox for centering and column direction */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.album-card:hover {
+    transform: translateY(-4px); /* Moves the card slightly upwards on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.album-card img {
+    width: 100%; 
+    height: auto; 
+    display: block;
+    margin-bottom: 12px;
+    border-radius: 4px; 
+}
+
+.album-title {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    color: #333;
+}
+
+.album-artist {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+}
+
+
+.album-card:hover {
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.album-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+/* Mobile Small styles: for screens up to 375px */
+@media (max-width: 375px) {
+    .album-list {
+        grid-template-columns: 1fr; /* Only one album per row */
+    }
+
+    .album-card {
+        margin: 4px;
+    }
+}
+
+/* Mobile Large styles: for screens between 376px and 767px */
+@media (min-width: 376px) and (max-width: 767px) {
+    .album-list {
+        grid-template-columns: repeat(2, 1fr); /* Two albums per row */
+    }
+    
+    .album-card {
+        margin: 6px; 
+    }
+}

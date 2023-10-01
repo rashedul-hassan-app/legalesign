@@ -1,5 +1,8 @@
+// AlbumList.js
+
 import React, { useEffect, useState } from 'react';
 import { getTop50Albums } from '../services/itunesServices';
+import AlbumCard from './AlbumCard'; // Import the AlbumCard component
 
 const AlbumList = () => {
     const [albums, setAlbums] = useState(null);
@@ -7,8 +10,7 @@ const AlbumList = () => {
     useEffect(() => {
         const fetchData = async () => {
             const fetchReq = await getTop50Albums();
-            setAlbums(fetchReq);
-            console.log(fetchReq);
+            setAlbums(fetchReq); // Assuming data structure from iTunes API
         }
         
         fetchData();
@@ -20,11 +22,10 @@ const AlbumList = () => {
 
     return (
         <div>
-            <div>Album List</div>
-            {/* render each album's title as an example */}
-            <ul>
-            {albums.map(album => <li key={album.id.attributes['im:id']}>{album.title.label}</li>)}
-            </ul>
+            <h2>Album List</h2>
+            <div className="album-list">
+                {albums.map(album => <AlbumCard key={album.id.attributes['im:id']} album={album} />)}
+            </div>
         </div>
     );
 }
