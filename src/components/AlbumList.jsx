@@ -10,7 +10,7 @@ const AlbumList = () => {
     useEffect(() => {
         const fetchData = async () => {
             const fetchReq = await getTop50Albums();
-            setAlbums(fetchReq); // Assuming data structure from iTunes API
+            setAlbums(fetchReq);
         }
         
         fetchData();

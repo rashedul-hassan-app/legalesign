@@ -1,3 +1,9 @@
+/* This file serves the full css of the whole project
+* Left some comments for myself and others to read/edit necessary
+* Some simple comments left to remind myself of what I was doing
+* Improvements: would be nice to use separate files
+*/
+
 .album-headline {
     text-align: center;
     font-size: 2rem;
@@ -24,14 +30,14 @@
 .album-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    filter: brightness(1.3); /* Brighten the card by 10% on hover */
+    filter: brightness(1.3); 
 }
 
 .album-card img {
     width: 100%; 
     height: 100%; 
     display: block;
-    object-fit: cover;  /* Ensures the image covers the whole card */
+    object-fit: cover;  
 }
 
 /* Gradient overlay for text visibility */
@@ -49,12 +55,12 @@
     font-size: 16px;
     font-weight: 500;
     color: #ffffffd9;
-    margin-bottom: 5px;  /* A little space between title and artist */
+    margin-bottom: 5px;  
 }
 
 .album-artist {
     font-size: 14px;
-    color: #ccc;  /* Lighter color for the artist for distinction */
+    color: #ccc;  
 }
 
 .album-list {
@@ -67,12 +73,12 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 24px; /* Adjust as needed */
-    color: white; /* Color of the icon */
+    font-size: 24px; 
+    color: white; 
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-    border-radius: 50%; /* To make it circular */
-    width: 36px; /* To create a circle */
+    border-radius: 50%; 
+    width: 36px; 
     height: 36px;
     display: flex;
     align-items: center;
@@ -80,8 +86,8 @@
 }
 
 .favorite-icon.active {
-    background-color: rgba(0, 0, 0, 0.6); /* Adding a background to the active favorite icon. Adjust the color and opacity as needed */
-    color: red; /* Color of the active heart icon */
+    background-color: rgba(0, 0, 0, 0.6);
+    color: red; 
 }
 
 
@@ -111,7 +117,7 @@ h2:before {
     bottom: -3px;
     width: 50px;
     height: 3px;
-    background-color: #fca311; /* Change to your preferred color */
+    background-color: #fca311; 
     margin: 0 auto;
 }
 
@@ -137,7 +143,6 @@ h2:before {
 .search-input:focus {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Mobile Small styles: for screens up to 375px */
 @media (max-width: 375px) {
