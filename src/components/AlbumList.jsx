@@ -27,8 +27,8 @@ const AlbumList = () => {
 
     return (
         <div>
-             <SearchBar onSearch={setSearchTerm} />
-            <h2>Album List</h2>
+            <div className="album-headline">Hi!</div>
+            <SearchBar onSearch={setSearchTerm} />
             <div className="album-list">
                 {filteredAlbums.map(album => 
                     <AlbumCard key={album.id.attributes['im:id']} album={album} />
