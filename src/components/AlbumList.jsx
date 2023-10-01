@@ -1,11 +1,11 @@
-// AlbumList.js
-
 import React, { useEffect, useState } from 'react';
 import { getTop50Albums } from '../services/itunesServices';
-import AlbumCard from './AlbumCard'; // Import the AlbumCard component
+import AlbumCard from './AlbumCard';
+import SearchBar from './SearchBar';
 
 const AlbumList = () => {
-    const [albums, setAlbums] = useState(null);
+    const [albums, setAlbums] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -16,15 +16,23 @@ const AlbumList = () => {
         fetchData();
     }, []);
 
-    if (!albums) {
+    // Ensure albums is not null before filtering
+    const filteredAlbums = albums && albums.filter(album => 
+        album.title.label.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    if (!albums.length) {
         return <div>Loading...</div>;
     }
 
     return (
         <div>
+             <SearchBar onSearch={setSearchTerm} />
             <h2>Album List</h2>
             <div className="album-list">
-                {albums.map(album => <AlbumCard key={album.id.attributes['im:id']} album={album} />)}
+                {filteredAlbums.map(album => 
+                    <AlbumCard key={album.id.attributes['im:id']} album={album} />
+                )}
             </div>
         </div>
     );
