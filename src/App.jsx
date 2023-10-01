@@ -1,10 +1,10 @@
-import Task from "./components/Task";
-import TaskList from "./components/TaskList";
+import AlbumList from "./components/AlbumList";
 
 const App = () => {
   return (
     <div className="app">
-      Hello world
+      <div>Hello world</div>
+      <AlbumList />
     </div>
   );
 };
